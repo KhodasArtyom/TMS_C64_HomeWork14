@@ -8,9 +8,13 @@ public enum Currency {
     RUB("Российский рубль"),
     CNY("Китайский юань");
 
-    private String currencyInRus;
+  private String currencyInRus;
 
     Currency(String currencyInRus) {
         this.currencyInRus = currencyInRus;
+    }
+
+    public String getCurrencyInRus() {
+        return currencyInRus;
     }
 }
