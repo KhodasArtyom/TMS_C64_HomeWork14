@@ -1,3 +1,5 @@
+package by.teachMeSkills.KhodasArtyom.HomeWork14.CurrencyOperations;
+
 public enum Currency {
     BYN("Белорусский рубль"),
     USD("Доллар США"),
