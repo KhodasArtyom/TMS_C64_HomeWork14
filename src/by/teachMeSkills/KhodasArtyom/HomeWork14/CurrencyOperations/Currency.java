@@ -1,20 +1,24 @@
 package by.teachMeSkills.KhodasArtyom.HomeWork14.CurrencyOperations;
 
+import java.math.BigDecimal;
+
 public enum Currency {
     BYN("Белорусский рубль"),
-    USD("Доллар США"),
+    USD("Доллар"),
     EUR("Евро"),
     GBP("Фунт стерлингов"),
     RUB("Российский рубль"),
     CNY("Китайский юань");
 
-  private String currencyInRus;
+    private final String valueOnRus;
 
-    Currency(String currencyInRus) {
-        this.currencyInRus = currencyInRus;
+    Currency(String valueOnRus){
+        this.valueOnRus = valueOnRus;
     }
 
-    public String getCurrencyInRus() {
-        return currencyInRus;
+    public String getValueOnRus(){
+        return valueOnRus;
     }
+
+
 }
