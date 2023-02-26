@@ -18,21 +18,21 @@ public class ExchangeService {
         };
     }
 
-    public BigDecimal exchange(Currency ourCurrency, BigDecimal moneyAmount, Currency obtainedCurrency) {
-        if (ourCurrency == obtainedCurrency) {
+    public BigDecimal exchange(Currency currentCurrency, BigDecimal moneyAmount, Currency obtainedCurrency) {
+        if (currentCurrency == obtainedCurrency) {
             return moneyAmount;
         }
         ExchangeRate[] rates = this.getTodayRates();
-        ExchangeRate ourRate = findRate(rates, ourCurrency);
-        ExchangeRate obtainedRate = findRate(rates, obtainedCurrency);
-        BigDecimal bynMoneyAmount = moneyAmount
-                .multiply(ourRate.getBigDecimalRate());
-        BigDecimal obtainedMoneyAmount = bynMoneyAmount
+        ExchangeRate currentRate = getRate(rates, currentCurrency);
+        ExchangeRate obtainedRate = getRate(rates, obtainedCurrency);
+        BigDecimal amount = moneyAmount
+                .multiply(currentRate.getBigDecimalRate());
+        BigDecimal obtainedMoneyAmount = amount
                 .divide(obtainedRate.getBigDecimalRate(), 2, RoundingMode.HALF_UP);
         return obtainedMoneyAmount;
     }
 
-    private ExchangeRate findRate(ExchangeRate[] rates, Currency currency) {
+    private ExchangeRate getRate(ExchangeRate[] rates, Currency currency) {
         if (currency == BASE_CURRENCY) {
             return BASE_RATE;
         }

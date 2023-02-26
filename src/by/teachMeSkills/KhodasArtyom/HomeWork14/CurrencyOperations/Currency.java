@@ -10,15 +10,13 @@ public enum Currency {
     RUB("Российский рубль"),
     CNY("Китайский юань");
 
-    private final String valueOnRus;
+    private final String rusValue;
 
-    Currency(String valueOnRus){
-        this.valueOnRus = valueOnRus;
+    Currency(String rusValue){
+        this.rusValue = rusValue;
     }
 
     public String getValueOnRus(){
-        return valueOnRus;
+        return rusValue;
     }
-
-
 }
