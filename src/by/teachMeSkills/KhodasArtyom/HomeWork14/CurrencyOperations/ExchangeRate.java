@@ -3,8 +3,8 @@ package by.teachMeSkills.KhodasArtyom.HomeWork14.CurrencyOperations;
 import java.math.BigDecimal;
 
 public class ExchangeRate {
-    private Currency currency;
-    private BigDecimal bigDecimalRate;
+    private final Currency currency;
+    private final BigDecimal bigDecimalRate;
 
     public ExchangeRate(Currency currency, BigDecimal bigDecimalRate){
         if (bigDecimalRate.compareTo(BigDecimal.ZERO) <= 0) {
